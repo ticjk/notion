@@ -10,11 +10,11 @@
     <style>
 
 body{
-    background-color: white;
+    background-color: #191919;
 }
   
 #timer {
-  color: #000000;
+  color: #FFFFFF;
   text-align: center;
   text-transform: uppercase;
   font-family: monospace;
@@ -26,63 +26,41 @@ body{
   display: inline-block;
   padding: 20px;
   width: 100px;
-  border: 3px solid #000000;
+  border: 3px solid #FFFFFF;
   border-radius: 5px;
-  box-shadow: 2px 2px 1px 0px #000000;
-}    
+  box-shadow: 2px 2px 1px 0px #FFFFFF;
+}  
+
 .days {
-  background: #FFFFFF;
+  background: #191919;
 }
 
 .hours {
-  background: #FFFFFF;
+  background: #191919;
 }
 
 .minutes {
-  background: #FFFFFF;
+  background: #191919;
 }
 
 .seconds {
-  background: #FFFFFF;
+  background: #191919;
 }
 
 .numbers {
   font-family: monospace;
-  color:  #000000;
+  color:  #FFFFFF;
   font-size: 4em;
   text-align: center;
 }
 
-.white {
-  position: absolute;
-  background:  #eeeeee;
-  height: 85px;
-  width: 75px;
-  left: 30%;
-  top: 2%;
+
+
+.until {
+  font-family: monospace;
+  text-align: center;
+  color:  #FFFFFF;
 }
-
-.red {
-  position: absolute;
-  background:  #EF2F3C;
-  left: 18%;
-  top: 9%;
-  height: 65px;
-  width: 70px;
- 
-}
-
-.blue {
-  position: absolute;
-  background:  #276FBF;
-  height: 80px;
-  width: 80px;
-  left: 60%;
-  top: 5%;
-
-
-}
-
 
     </style>
 </head>
@@ -133,4 +111,8 @@ let timer = setInterval(function() {
 
 }, 1);
 </script>
+<div class="until">
+  <h2>left of summer</h2>
+</div>
 </html>
+
