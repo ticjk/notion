@@ -70,13 +70,27 @@
     left_seconds = document.getElementById("seconds");
  
     }
+    
     function showRemaining (){
-    now = new Date();
-    days_in_this_month = new Date( now.getFullYear(), now.getMonth()+1, 0).getDate(); 
-    days = days_in_this_month- now.getDate();
-    hours = 23 - now.getHours();
-    minutes = 59 - now.getMinutes();
-    seconds = 59 - now.getSeconds();
+
+    const year = new Date().getFullYear();
+const myDate = new Date('Sep 4, 2022 00:00:00');
+console.log(myDate);
+
+// countdown
+let timer = setInterval(function() {
+
+  // get today's date
+  const today = new Date().getTime();
+
+  // get the difference
+  const diff = myDate - today;
+
+  // math
+  let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((diff % (1000 * 60)) / 1000);
     left_days.innerHTML = days + "<br> <span class=\"small\"> days </span>"
     left_hours.innerHTML = hours + "<br> <span class=\"small\"> hours</span>";
     left_minutes.innerHTML = minutes + "<br> <span class=\"small\">mins</span>";
