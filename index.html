@@ -88,7 +88,11 @@ let timer = setInterval(function() {
   document.getElementById("minutes").innerHTML=minutes
   document.getElementById("seconds").innerHTML=seconds
 
-
+left_days.innerHTML = days + "<br> <span class=\"small\"> days </span>"
+    left_hours.innerHTML = hours + "<br> <span class=\"small\"> hours</span>";
+    left_minutes.innerHTML = minutes + "<br> <span class=\"small\">mins</span>";
+    left_seconds.innerHTML = seconds + "<br> <span class=\"small\">secs</span>";
+    
 
 }, 1);
 </script>
