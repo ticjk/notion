@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 
-    <title>Time Left of summer</title>
+    <title>Time Left in this month</title>
     <style>
         
         body{
@@ -56,45 +56,35 @@
         <h2 class="box" id="minutes"></h2>
         <h2 class="box" id="seconds"></h2>
         <h3>
-            Left of <br>this Summer
+            Left in <br>This Month
         </h3>
     </div>
 
 
 
 <script>
-    const year = new Date().getFullYear();
-const myDate = new Date('Sep 05, 2022 09:00:00');
-console.log(myDate);
-
-// countdown
-let timer = setInterval(function() {
-
-  // get today's date
-  const today = new Date().getTime();
-
-  // get the difference
-  const diff = myDate - today;
-
-  // math
-  let days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  let seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-  // display
-  document.getElementById("days").innerHTML=days
-  document.getElementById("hours").innerHTML=hours
-  document.getElementById("minutes").innerHTML=minutes
-  document.getElementById("seconds").innerHTML=seconds
-
-left_days.innerHTML = days + "<br> <span class=\"small\"> days </span>"
+    function CountDownTimer  () {
+    left_days = document.getElementById("days");
+    left_hours = document.getElementById("hours");
+    left_minutes = document.getElementById("minutes");
+    left_seconds = document.getElementById("seconds");
+ 
+    }
+    function showRemaining (){
+    now = new Date();
+    days_in_this_month = new Date( now.getFullYear(), now.getMonth()+1, 0).getDate(); 
+    days = days_in_this_month- now.getDate();
+    hours = 23 - now.getHours();
+    minutes = 59 - now.getMinutes();
+    seconds = 59 - now.getSeconds();
+    left_days.innerHTML = days + "<br> <span class=\"small\"> days </span>"
     left_hours.innerHTML = hours + "<br> <span class=\"small\"> hours</span>";
     left_minutes.innerHTML = minutes + "<br> <span class=\"small\">mins</span>";
     left_seconds.innerHTML = seconds + "<br> <span class=\"small\">secs</span>";
-    
+    }
 
-}, 1);
+timer = setInterval (showRemaining, 1000) 
+CountDownTimer() ;
 </script>
 </body>
 </html>
